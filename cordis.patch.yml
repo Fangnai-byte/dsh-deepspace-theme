@@ -1,0 +1,9 @@
+# dsh-deepspace-theme bundle patch: mounts the theme plugin row for static
+# installs (e.g. `dsh plugin --profile web add ./dsh-deepspace-theme` or a
+# github:/npm ref). The row's `name` resolves to this package; the host half is
+# package main (bundle/host.js) and the browser half is the ./client export
+# (bundle/client.js), picked up by the client module system via the
+# `dsh.client` declaration in package.json.
+- insert:
+    - id: deepspace-theme
+      name: dsh-deepspace-theme

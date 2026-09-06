@@ -1,5 +1,7 @@
 # dsh-deepspace-theme
 
+> 已发布到 GitHub：**https://github.com/Fangnai-byte/dsh-deepspace-theme**
+
 给 **DeepSeek Harness Web GUI**（`dsh --profile web`）用的**深空玻璃拟态（彗星蓝 / 靛紫）**主题模板。
 
 这是**适配当前 dsh（`0.1.2-rc.1`）**的写法：**只用官方 token 覆盖 + 稳定选择器，不含构建期哈希类名**，所以能稳定工作、不乱滚动、不坏侧边栏，也不会在 dsh 前端升级后突然失效。
@@ -71,13 +73,12 @@ deepspace-theme/
 ## 四、安装 + 测试
 
 ```powershell
-# 先构建 bundle/（client + host），与 kimino 相同的客户端打包流程
-# （需要的话我可以帮你搭构建）
+# 从 GitHub 安装（已发布）
+dsh plugin --profile web add github:Fangnai-byte/dsh-deepspace-theme
 
-# 添加到 web profile
-dsh plugin --profile web add ./dsh-deepspace-theme
-# 或
-dsh plugin --profile web add file:./dsh-deepspace-theme
+# 或本地路径（开发用）
+# dsh plugin --profile web add ./dsh-deepspace-theme
+# dsh plugin --profile web add file:./dsh-deepspace-theme
 
 # 停掉占用 3080 的旧实例，再重启加载
 #   1) netstat -ano | findstr :3080     找 PID
